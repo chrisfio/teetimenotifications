@@ -1,17 +1,20 @@
+import os
 import requests
 import time
 import random
+from dotenv import load_dotenv
 from datetime import datetime
 from twilio.rest import Client
 
+load_dotenv()
 # your Twilio account SID and auth token, which you can get from the Twilio console
-account_sid = '<your_account_sid>'
-auth_token = '<your_auth_token>'
+account_sid = os.getenv("TWILIO_ACCOUNT_SID")
+auth_token = os.getenv("TWILIO_AUTH_TOKEN")
 
 client = Client(account_sid, auth_token)
 count = 0
 
-url = "https://www.chronogolf.com/marketplace/clubs/18159/teetimes?date=2024-04-27&course_id=21182&affiliation_type_ids%5B%5D=85113&affiliation_type_ids%5B%5D=85113&nb_holes=18"
+url = "https://www.chronogolf.com/marketplace/clubs/18159/teetimes?date=2024-04-30&course_id=21182&affiliation_type_ids%5B%5D=85113&affiliation_type_ids%5B%5D=85113&nb_holes=18"
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.69.0 Safari/537.36",
