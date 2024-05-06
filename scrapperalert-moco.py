@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 from twilio.rest import Client
 
-# load the environment variables
+# load the environment variabless
 load_dotenv()
 
 # your Twilio account SID and auth token, which you can get from the Twilio console
